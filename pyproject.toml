@@ -1,0 +1,10 @@
+[project]
+name = "pilucca"
+version = "0.1.0"
+description = "If you usually forgot about reserve a position on iLucca Office, this tool is for you. It will set your default week positions on the available weeks."
+requires-python = ">=3.14"
+dependencies = [
+     "httpx[http2]",
+     "pydantic[email]>=2.12.5",
+     "python-dotenv>=1.2.1",
+]
