@@ -89,7 +89,7 @@ def create_har_entry(response: httpx.Response):
         "request": {
             "method": request.method,
             "url": str(request.url),
-            "httpVersion": "HTTP/1.1",
+            "httpVersion": response.http_version,
             "cookies": req_cookies,
             "headers": [{"name": k, "value": v} for k, v in request.headers.items()],
             "queryString": [],
@@ -100,7 +100,7 @@ def create_har_entry(response: httpx.Response):
         "response": {
             "status": response.status_code,
             "statusText": response.reason_phrase,
-            "httpVersion": "HTTP/1.1",
+            "httpVersion": response.http_version,
             "cookies": [], # Usually parsed from 'set-cookie' if needed
             "headers": [{"name": k, "value": v} for k, v in response.headers.items()],
             "content": {
