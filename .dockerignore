@@ -1,0 +1,15 @@
+# The Dockerfile copies the whole build context (COPY . .). Keep local secrets,
+# captured traffic and personal data out of the image.
+.env
+.env.*
+!.env.example
+har/
+people.json
+pictures/
+.venv/
+build/
+*.egg-info/
+__pycache__/
+.idea/
+.vscode/
+.git/
